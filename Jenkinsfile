@@ -15,7 +15,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'dockerhub', toolName: 'dockerhub') {
                         sh "docker push vishal431/adservice:latest "
                     }
                 }
